@@ -18,9 +18,8 @@ app.get('/stock/:name', async (req, res) => {
 		stream
 		.pipe(csv())
 		.on('data', data => {
-			console.log(data[1])
 			if(data[1] === req.params.name){
-				result = [data[3],data[4],data[5],data[6],data[7]]
+				result = [[data[3], data[8]], [data[4], data[9]],[data[5], data[10]],[data[6], data[11]],[data[7],data[12]]];
 				console.log("FINISHED QUERYTING")
 				resolve()
 			}
